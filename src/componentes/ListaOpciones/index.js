@@ -4,15 +4,6 @@ const ListaOpciones = (props) =>{
     //estructura map => arreglo.map( (equipo,index ) => {
     //      return <option>  </option>
     //})
-    const equipos = [   "Programación",
-                        "Front End",
-                        "Data Science",
-                        "Devops",
-                        "UX y Diseño",
-                        "Móvil",
-                        "Innovación y  Gestión"
-                    ];
-
     const manejarCambio = (event) => {
         props.ActualizarEquipo(event.target.value)
     }
@@ -22,7 +13,7 @@ const ListaOpciones = (props) =>{
             <select value={props.valor} onChange={manejarCambio}>
                 <option value="" disabled defaultValue="" hidden>Seleccione una opcion</option>
                 {
-                    equipos.map((equipo,index)=> {
+                    props.equipos.map((equipo,index)=> {
                         return <option key={index} value={equipo}>{equipo}</option>
                     })
                 }
